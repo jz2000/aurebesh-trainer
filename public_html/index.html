@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    </head>
+    <body class="b-page">
+        <div class="b-language">
+            <div class="b-language__aurebesh">
+                <a href="#" class="b-language__link" id="js-language-aurebesh">ab</a>
+            </div>
+            <div class="b-language__high-galactic">
+                <a href="#" class="b-language__link" id="js-language-high-galactic">high galactic</a>
+            </div>
+        </div>
+        
+        <div class="b-page-header">Aurebesh trainer</div>
+        
+        
+        <div class="b-game-field">
+        <div class="b-active-task">
+            <div class="b-active-task__caption">
+                <span>Current Task</span>
+            </div>
+            <div class="b-active-task__container">
+                <div class="b-active-task__card">
+                    <span id="task-place" class="b-active-task__symbol">
+                        A
+                    </span>
+                </div>
+                <div class="b-active-task__answer">
+                    <div>
+                        <form id="answer-form">
+                            <label for="answer" class="b-active-task__answer__label">Answer &gt;</label>
+                            <input type="text" id="answer" autocomplete="off" size="2" class="b-active-task__answer__input">
+                            <button type="submit" class="b-active-task__answer__button">OK</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+        <div class="b-statistics">
+            <div class="b-statistics__caption">
+                <span>Result</span>
+            </div>
+            <div class="b-statistics__container">
+                <div class="b-statistics__answer">
+                    <div class="b-answer-indicator">
+                        <div class="b-answer-indicator__text" id="js-answer-text">Idle</div>
+                        <div class="b-answer-indicator__explanation" id="js-answer-explanation">
+                            <span class="b-answer-indicator__explanation__aub" id="js-answer-explanation__aub">A</span>
+                            =
+                            <span class="b-answer-indicator__explanation__hg" id="js-answer-explanation__hg">?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-statistics__totals">
+                    <div class="b-statistics__row">
+                        <span class="b-statistics__row-name">Attempts </span>
+                        <span class="b-statistics__row-value" id="js-total-tasks">0</span>
+                    </div>
+                    <div class="b-statistics__row">
+                        <span class="b-statistics__row-name">Hits </span>
+                        <span class="b-statistics__row-value" id="js-total-hits">0</span>
+                    </div>
+                    <div class="b-statistics__row">
+                        <span class="b-statistics__row-name">Misses </span>
+                        <span class="b-statistics__row-value" id="js-total-misses">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="b-status">
+            <div class="b-status__caption">
+                <span>Progress</span>
+            </div>
+            <div class="b-status__container">
+                <div class="p-status__to-learn">
+                    <div class="p-status__to-learn__caption">To Learn</div>
+                    <div id="js-letters-to-learn">
+                    </div>    
+                </div>
+                <div class="p-status__in-learning">
+                    <div class="p-status__in-learning__caption">Learning</div>
+                    <div id="js-letters-in-learning">
+                    </div>    
+                </div>
+                <div class="p-status__well-learnt">
+                    <div class="p-status__well-learnt__caption">Learnt</div>
+                    <div id="js-letters-well-learnt">
+                    </div>    
+                </div>
+            </div>    
+        </div>    
+            
+        </div>
+        
+        <div class="b-font-sample__aurebesh">
+            <span>abcdefghijklmnopqrstuvwxyz1234567890</span>
+        </div>    
+
+        <div class="b-font-sample__aurebesh_inv">
+            <span>abcdefghijklmnopqrstuvwxyz1234567890</span>
+        </div>    
+
+        <div class="b-font-sample__aurebesh_tech">
+            <span>abcdefghijklmnopqrstuvwxyz1234567890</span>
+        </div>    
+
+        <div class="b-font-sample__aurebesh_tech_inv">
+            <span>abcdefghijklmnopqrstuvwxyz1234567890</span>
+        </div>    
+
+        <script id="js-letter-template" type="text/template">
+            <span class="b-status__letter">{{letter.letter}}</span>
+<!--            <span>{{letter.hits}}</span>
+            <span>{{letter.misses}}</span>
+            <span>{{letter.hitsAfterLastMiss}}</span>-->
+        </script>
+        
+        <script type="text/javascript" src="js/app.js">
+        </script>
+        
+    </body>
+</html>
