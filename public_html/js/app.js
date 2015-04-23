@@ -1,6 +1,8 @@
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 
-    'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7',
+    'W', 'X', 'Y', 'Z',
+    'TH', 'SH', 'OO', 'KH', 'NG', 'CH', 'EO', 'AE',
+    '0', '1', '2', '3', '4', '5', '6', '7',
     '8', '9'/*,
     ',', '.', '?', '!', ':', ';', ' ', '"', '`', "'", '(', ')', '/', '$' */ 
 ];
@@ -55,17 +57,17 @@ function resetStatistics() {
 }
 
 function findWorstLetter() {
-    var worstRatio = findWorstRatio();
-    var worstLetters = collectWorstLetters(worstRatio);
-    var worstLettersNotInPool = filterOutPool(worstLetters);
-    var letterIndex = Math.floor((Math.random() * worstLettersNotInPool.length));
-    return worstLettersNotInPool[letterIndex];
+    var lettersNotInPool = filterOutPool(lettersPool);
+    var worstRatio = findWorstRatio(lettersNotInPool);
+    var worstLetters = collectWorstLetters(lettersNotInPool, worstRatio);
+    var letterIndex = Math.floor((Math.random() * worstLetters.length));
+    return worstLetters[letterIndex];
 }
 
-function findWorstRatio() {
-    var worstRatio = 0;
-    for (var i = 0; i < lettersPool.length; i++) {
-        var letter = lettersPool[i];
+function findWorstRatio(letters) {
+    var worstRatio = Math.abs(Math.max());
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
         var ratio = letter.hitsAfterLastMiss;
         if (worstRatio > ratio) {
             worstRatio = ratio;
@@ -74,10 +76,10 @@ function findWorstRatio() {
     return worstRatio;
 }
 
-function collectWorstLetters(worstRatio) {
+function collectWorstLetters(letters, worstRatio) {
     var result = [];
-    for (var i = 0; i < lettersPool.length; i++) {
-        var letter = lettersPool[i];
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
         var ratio = letter.hitsAfterLastMiss;
         if (ratio <= worstRatio) {
             result.push(letter);
