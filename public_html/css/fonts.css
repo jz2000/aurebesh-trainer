@@ -14,4 +14,8 @@
     font-family: "AurebeshTechInv";
     src: url(../fonts/AureTechINV.otf) format("truetype");
 }
+@font-face {
+    font-family: "AurebeshInvertedCapitals";
+    src: url(../fonts/AurebeshInvertedCapitals.otf) format("woff");
+}
 
