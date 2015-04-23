@@ -3,6 +3,9 @@
 .b-page {
     background-color: black;
     color: aliceblue;
+    text-rendering: optimizeLegibility; /* optional: for older browsers */
+    -webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+    font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
 }
 
 .b-page_system_high-galactic {
@@ -10,7 +13,7 @@
 }
 
 .b-page_system_aurebesh {
-    font-family: "AurebeshTech", Verdana, Tahoma;
+    font-family: "AurebeshInv", Verdana, Tahoma;
 }
 
 .b-language {
@@ -18,7 +21,7 @@
 }
 
 .b-language__aurebesh {
-    font-family: "AurebeshTech", Verdana, Tahoma;
+    font-family: "AurebeshInv", Verdana, Tahoma;
     font-size: 14px;
 /*    border-color: white;
     border-style: solid;
@@ -104,7 +107,7 @@
 }
 
 .b-active-task__symbol {
-    font-family: "AurebeshTech", Verdana, Tahoma;
+    font-family: "AurebeshInv", Verdana, Tahoma;
     font-size: 240px;
     text-shadow: 2px 2px 8px #5eaecc;
 }
@@ -239,7 +242,7 @@
 }
 
 .b-status__letter {
-    font-family: "AurebeshTech", Verdana, Tahoma;
+    font-family: "AurebeshInv", Verdana, Tahoma;
     width: 30px;
     display: inline-block;
     font-size: 22px;
@@ -300,7 +303,7 @@
 }
 
 .b-answer-indicator__explanation__aub {
-    font-family: "AurebeshTech", Verdana, Tahoma;
+    font-family: "AurebeshInv", Verdana, Tahoma;
     font-size: 22px;
 }
 
@@ -358,13 +361,12 @@
 }
 
 .b-statistics__row-name {
-    width: 110px;
+    width: 140px;
     display: inline-block;
 }
 
 .b-statistics__row-value {
     float: right;
-    
 }
 
 .b-font-sample__aurebesh { 
@@ -387,6 +389,15 @@
 
 .b-font-sample__aurebesh_tech_inv { 
     font-family: "AurebeshTechInv", Verdana, Tahoma;
+    font-size: 36px;
+    display: none;
+}
+
+.b-font-sample__aurebesh_inverted_capitals {
+    font-family: "AurebeshInvertedCapitals", Verdana, Tahoma;
+    /*text-rendering: "optimizeLegibility";*/
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
     font-size: 36px;
     display: none;
 }
