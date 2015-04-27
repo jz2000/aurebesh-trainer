@@ -1,3 +1,6 @@
+define([], function() {
+    "use strict";
+
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 
     'W', 'X', 'Y', 'Z',
@@ -136,20 +139,6 @@ function wireUpLanguageSwitch() {
         switchToAurebesh()();
     });
 }
-
-wireUpLanguageSwitch();
-
-switchToHighGalactic();
-
-resetStatistics();
-
-restoreTaskPool();
-
-renderStatus();
-
-generateTask();
-
-renderResult(currentTask.letter, '?');
 
 function renderResult(task, answer) {
     var explAb = document.querySelector('#js-answer-explanation__aub');
@@ -303,8 +292,12 @@ function renderStatus() {
     renderLettersToLearn();
 }
 
-var form = document.querySelector('#answer-form');
-form.addEventListener('submit', function(e) {
+function wireUpForm() {
+    var form = document.querySelector('#answer-form');
+    form.addEventListener('submit', submitForm);
+}
+
+function submitForm(e) {
    e.preventDefault();
    var answerNode = document.querySelector('#answer');
    var answer = answerNode.value.trim();
@@ -341,5 +334,19 @@ form.addEventListener('submit', function(e) {
    } else {
        //show warning
    }
+}
+
+return {
+    wireUpLanguageSwitch: wireUpLanguageSwitch,
+    switchToHighGalactic: switchToHighGalactic,
+    resetStatistics: resetStatistics,
+    restoreTaskPool: restoreTaskPool,
+    renderStatus: renderStatus,
+    generateTask: generateTask,
+    renderResult: renderResult,
+    currentTask: currentTask,
+    wireUpForm: wireUpForm
+};
+
 });
 
