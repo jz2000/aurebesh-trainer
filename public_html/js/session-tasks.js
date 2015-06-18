@@ -31,7 +31,7 @@ define(['session-mem'], function(sessionMem) {
     }
 
     function findWorstRatio(letters) {
-        var worstRatio = Math.abs(Math.max());
+        var worstRatio = Number.MAX_VALUE;
         for (var i = 0; i < letters.length; i++) {
             var letter = letters[i];
             var ratio = letter.hitsAfterLastMiss;
