@@ -71,6 +71,7 @@ function(writingSystemSwitcher, tasks, sessionTasks, activeTasks, ui) {
         writingSystemSwitcher.wireUpLanguageSwitch();
         writingSystemSwitcher.switchToHighGalactic();
         sessionTasks.resetStatistics(mems);
+        activeTasks.reset();
         activeTasks.restoreTaskPool(sessionTasks);
         renderStatus();
         var newTask = activeTasks.generateTask();
