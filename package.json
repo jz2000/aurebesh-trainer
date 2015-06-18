@@ -1,0 +1,40 @@
+{
+  "name": "aurebesh-trainer",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jz2000/aurebesh-trainer"
+  },
+  "author": "Sergey Zheznyakovskiy",
+  "bugs": {
+    "url": "https://github.com/jz2000/aurebesh-trainer/issues"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "homepage": "https://github.com/jz2000/aurebesh-trainer",
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-concat-sourcemaps": "~0.6.0",
+    "grunt-contrib-copy": ">=0.4.0",
+    "grunt-contrib-jshint": ">=0.4.0",
+    "grunt-contrib-less": "~0.11.x",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": ">=0.5.3",
+    "grunt-express": "1.2.1",
+    "grunt-karma": "~0.9.0",
+    "grunt-newer": ">=0.6.0",
+    "grunt-parallel": ">=0.3.0",
+    "karma": "~0.12.x",
+    "karma-beep-reporter": "~0.1",
+    "karma-chrome-launcher": "*",
+    "karma-junit-reporter": "~0.2.x",
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "~0.1.x",
+    "karma-requirejs": "^0.2.2",
+    "karma-coverage": "*",
+    "requirejs": "^2.1.17",
+    "bower":"*"
+  }
+}

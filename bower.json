@@ -1,0 +1,19 @@
+{
+  "name": "aurebesh-trainer",
+  "version": "1.0.0",
+  "authors": [
+    "Sergey Zheznyakovskiy"
+  ],
+  "homepage": "https://github.com/jz2000/aurebesh-trainer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine":"*",
+    "requirejs":"*"
+  }
+}
