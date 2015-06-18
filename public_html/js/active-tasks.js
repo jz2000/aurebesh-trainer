@@ -28,7 +28,13 @@ define([], function() {
     function restoreTaskPool(sessionTasks) {
         while (taskPool.length < recommendedPoolLength) {
             var task = sessionTasks.findWorstLetter(taskPool);
-            taskPool.push(task);
+            if (task) {
+                taskPool.push(task);
+            } else {
+                console.log('Empty task detected, activeTasks:', taskPool);
+                console.log('Empty task detected, sessionTasks:', sessionTasks);
+                alert('Hello, the impossible error has happend. Check the console.');
+            }
         }
     }
 
