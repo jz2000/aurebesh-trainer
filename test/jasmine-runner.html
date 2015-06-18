@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image/png" href="../bower_components/jasmine/images/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="../bower_components/jasmine/lib/jasmine-core/jasmine.css">
+
+<script type="text/javascript" src="../bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+<script type="text/javascript" src="../bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+<script type="text/javascript" src="../bower_components/jasmine/lib/jasmine-core/boot.js"></script>
+
+<script>
+  var require = {
+    paths: {
+      //"skeleton": "../lib/skeleton",
+      //"cs": "../vendor/cs",
+      //"coffee-script": "../vendor/coffee-script",
+      "active-tasks" : "../public_html/js/active-tasks",
+      "app" : "../public_html/js/app",
+      "tasks" : "../public_html/js/tasks",
+      "session-mem" : "../public_html/js/session-mem",
+      "session-tasks" : "../public_html/js/session-tasks", 
+      "ui-binding" : "../test/stub/ui-binding-stub", 
+      "writing-system-switcher" : "../test/stub/writing-system-switcher-stub" 
+    }
+  }
+</script>
+
+<script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+<!-- <script type="text/javascript" src="../public_html/js/session-mem.js"></script> -->
+<!-- <script type="text/javascript" src="../public_html/js/session-tasks.js"></script> -->
+<!-- <script type="text/javascript" src="../test/session-tasks-test.spec.js"></script> -->
+
+</head>
+<body>
+
+<script>
+  require(
+  [
+    'active-tasks-test.spec',
+    'app-test.spec',
+    'tasks-test.spec',
+    'session-tasks-test.spec'
+  ],
+  function() {
+    // jasmine.getEnv().addReporter(new jasmine.HtmlReporter({
+    //    createElement: function(type){
+    //       return document.createElement(type);
+    //    }
+    // }));
+    jasmine.getEnv().execute();
+  });
+</script>
+
+</body>	
+</html>
