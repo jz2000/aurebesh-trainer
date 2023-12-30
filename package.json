@@ -11,30 +11,30 @@
     "url": "https://github.com/jz2000/aurebesh-trainer/issues"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "dev": ""
   },
   "homepage": "https://github.com/jz2000/aurebesh-trainer",
   "devDependencies": {
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-concat-sourcemaps": "~0.6.0",
-    "grunt-contrib-copy": ">=0.4.0",
-    "grunt-contrib-jshint": ">=0.4.0",
-    "grunt-contrib-less": "~0.11.x",
-    "grunt-contrib-uglify": "~0.6.0",
-    "grunt-contrib-watch": ">=0.5.3",
-    "grunt-express": "1.2.1",
-    "grunt-karma": "~0.9.0",
-    "grunt-newer": ">=0.6.0",
-    "grunt-parallel": ">=0.3.0",
-    "karma": "~0.12.x",
-    "karma-beep-reporter": "~0.1",
-    "karma-chrome-launcher": "*",
-    "karma-junit-reporter": "~0.2.x",
-    "karma-jasmine": "*",
-    "karma-phantomjs-launcher": "~0.1.x",
-    "karma-requirejs": "^0.2.2",
-    "karma-coverage": "*",
-    "requirejs": "^2.1.17",
-    "bower":"*"
+    "grunt-contrib-concat": "2.1.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-jshint": "3.2.0",
+    "grunt-contrib-less": "3.0.0",
+    "grunt-contrib-uglify": "5.2.2",
+    "grunt-contrib-watch": "1.1.0",
+    "grunt-express": "1.4.1",
+    "grunt-karma": "4.0.2",
+    "grunt-newer": "1.3.0",
+    "grunt-parallel": "0.5.1",
+    "karma": "6.4.2",
+    "karma-beep-reporter": "0.1.4",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-junit-reporter": "2.0.1",
+    "karma-jasmine": "5.1.0",
+    "karma-phantomjs-launcher": "1.0.4",
+    "karma-requirejs": "1.1.0",
+    "karma-coverage": "2.2.1",
+    "requirejs": "2.3.6",
+    "bower": "1.8.14"
   }
 }
