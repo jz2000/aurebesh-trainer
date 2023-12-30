@@ -12,9 +12,17 @@
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js",
-    "dev": ""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "homepage": "https://github.com/jz2000/aurebesh-trainer",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next": "14.0.4"
+  },
   "devDependencies": {
     "grunt-contrib-concat": "2.1.0",
     "grunt-contrib-copy": "1.0.0",
@@ -35,6 +43,12 @@
     "karma-requirejs": "1.1.0",
     "karma-coverage": "2.2.1",
     "requirejs": "2.3.6",
-    "bower": "1.8.14"
+    "bower": "1.8.14",
+    "typescript": "5.3.3",
+    "@types/node": "20.10.6",
+    "@types/react": "18.2.46",
+    "@types/react-dom": "18.2.18",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.4"
   }
 }
