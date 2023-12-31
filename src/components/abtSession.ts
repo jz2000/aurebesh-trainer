@@ -16,10 +16,12 @@ const selectNextTask = (taskPool: AbtTask[], previousTask: AbtTask | null): AbtT
 
 const letterToTask = (letter: string): AbtTask => ({
     letter,
-    attempts : 0,
-    hits : 0,
-    misses : 0,
-    hitsAfterLastMiss :0
+    attempts: 0,
+    hits: 0,
+    misses: 0,
+    hitsAfterLastMiss: 0,
+    lastAnswer: '',
+    lastAnswerStatus: 'idle',
 });
 
 const generateProgramTaskPool = (): AbtTask[] => {
@@ -81,9 +83,13 @@ export const useAbtSession = (): AbtSession => {
     const programTaskPool = useMemo<AbtTask[]>(() => generateProgramTaskPool(), []);
     const [recommendedImmediatePoolLength, setRecommendedImmediatePoolLength] = useState<number>(4);
     const [immediateTaskPool, setImmediateTaskPool] = useState<AbtTask[]>(initializeImmediateTaskPool(programTaskPool, recommendedImmediatePoolLength));
+    const [totalAttempts, setTotalAttempts] = useState<number>(0);
+    const [totalHits, setTotalHits] = useState<number>(0);
+    const [totalMisses, setTotalMisses] = useState<number>(0);
+    const [lastHit, setLastHit] = useState<Date>(new Date());
+    const [lastMiss, setLastMiss] = useState<Date>(new Date());
     const previousTask = useRef<AbtTask | null>(null);
     const currentTask = selectNextTask(immediateTaskPool, previousTask.current);
-    previousTask.current = currentTask;
 
     const checkPoolRust = () => {
         const result = [];
@@ -120,11 +126,17 @@ export const useAbtSession = (): AbtSession => {
         }
     }
 
+    const lastTask = previousTask.current;
+
+    previousTask.current = currentTask;
+
     return {
-        tasks : 0,
-        hits : 0,
-        misses : 0,
-        lastHit: new Date(),
-        lastMiss: new Date(),
+        totalAttempts,
+        totalHits,
+        totalMisses,
+        lastHit,
+        lastMiss,
+        lastTask,
+        currentTask,
     };
 }
