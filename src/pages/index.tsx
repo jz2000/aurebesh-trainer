@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import { init } from '../components/starter'
+// import { useAbtSession } from '../components/abtSession';
+import { AbtUiLanguageControl } from '../components/AbtUiLanguageControl';
+import { AbtUiLanguage } from '../components/abtTypes';
 
 export default function Home() {
-
-  useEffect(() => {
-    init();
-  }, []);
+  const [abtUiLanguage, setAbtUiLanguage] = useState<AbtUiLanguage>('high_galactic');
+  // const abtSession = useAbtSession();
 
   return (
     <>
@@ -18,15 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles['b-page']}>
-        <div className={styles['b-language']}>
-          <div className={styles['b-language__aurebesh']}>
-            <a href="#" className={styles['b-language__link']} id="js-language-aurebesh">ab</a>
-          </div>
-          <div className={styles['b-language__high-galactic']}>
-            <a href="#" className={styles['b-language__link']} id="js-language-high-galactic">high galactic</a>
-          </div>
-        </div>
+      <main className={`${styles['b-page']} ${abtUiLanguage === 'aurebesh' ? styles['b-page_system_aurebesh'] : styles['b-page_system_high-galactic']}`}>
+        <AbtUiLanguageControl currentAbtUiLanguage={abtUiLanguage} onChangeAbtUiLanguage={setAbtUiLanguage} />
 
         <div className={styles['b-page-header']}>Aurebesh Trainer</div>
 
