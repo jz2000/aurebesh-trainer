@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
+import { NoSsr } from '../components/NoSsr';
 import { useAbtSession } from '../components/abtSession';
 import { AbtUiLanguageControl } from '../components/AbtUiLanguageControl';
 import { AbtUiLanguage } from '../components/abtTypes';
@@ -26,41 +27,43 @@ export default function Home() {
 
         <div className={styles['b-page-header']}>Aurebesh Trainer</div>
 
-        <div className={styles['b-game-field']}>
-          <AbtActiveTaskPanel />
+        <NoSsr>
+          <div className={styles['b-game-field']}>
+            <AbtActiveTaskPanel />
 
-          <AbtSessionStatsPanel
-              totalAttempts={abtSession.totalAttempts}
-              totalHits={abtSession.totalHits}
-              totalMisses={abtSession.totalMisses}
-              lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
-              lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
-              lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
-          />
+            <AbtSessionStatsPanel
+                totalAttempts={abtSession.totalAttempts}
+                totalHits={abtSession.totalHits}
+                totalMisses={abtSession.totalMisses}
+                lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
+                lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
+                lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
+            />
 
-          <AbtLearningProgressPanel />
+            <AbtLearningProgressPanel />
 
-        </div>
+          </div>
 
-        <div className={styles['b-font-sample__aurebesh']}>
-          <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
-        </div>
+          <div className={styles['b-font-sample__aurebesh']}>
+            <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
+          </div>
 
-        <div className={styles['b-font-sample__aurebesh_inv']}>
-          <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
-        </div>
+          <div className={styles['b-font-sample__aurebesh_inv']}>
+            <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
+          </div>
 
-        <div className={styles['b-font-sample__aurebesh_tech']}>
-          <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
-        </div>
+          <div className={styles['b-font-sample__aurebesh_tech']}>
+            <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
+          </div>
 
-        <div className={styles['b-font-sample__aurebesh_tech_inv']}>
-          <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
-        </div>
+          <div className={styles['b-font-sample__aurebesh_tech_inv']}>
+            <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
+          </div>
 
-        <div className={styles['b-font-sample__aurebesh_inverted_capitals']}>
-          <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
-        </div>
+          <div className={styles['b-font-sample__aurebesh_inverted_capitals']}>
+            <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
+          </div>
+        </NoSsr>
       </main>
     </>
   )
