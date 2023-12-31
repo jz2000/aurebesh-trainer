@@ -122,14 +122,10 @@ export default function Home() {
           <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
         </div>
 
-        <script id="js-letter-template" type="text/template">
           <span className="b-status__letter">[letter.letter]</span>
-          <!--            <span>{{letter.hits}}</span>
-                      <span>{{letter.misses}}</span>
-                      <span>{{letter.hitsAfterLastMiss}}</span>-->
-        </script>
-
-        <script data-main="js/starter" src="js/require.js">Hello</script>
+          {/*<span>{{letter.hits}}</span>*/}
+          {/*<span>{{letter.misses}}</span>*/}
+          {/*<span>{{letter.hitsAfterLastMiss}}</span>*/}
       </main>
     </>
   )
