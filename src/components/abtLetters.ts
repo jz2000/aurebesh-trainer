@@ -1,4 +1,5 @@
-var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+const letters: string[] = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
     'W', 'X', 'Y', 'Z',
     'TH', 'SH', 'OO', 'KH', 'NG', 'CH', 'EO', 'AE',
@@ -7,6 +8,6 @@ var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
     ',', '.', '?', '!', ':', ';', ' ', '"', '`', "'", '(', ')', '/', '$' */
 ];
 
-export var getAllTasks = function() {
-    return letters.slice(0, letters.length);
+export const getAllLetters = (): string[] => {
+    return [...letters];
 };
