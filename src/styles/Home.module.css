@@ -1,3 +1,408 @@
+@import url(fonts.css);
+
+.b-page {
+  background-color: black;
+  color: aliceblue;
+  text-rendering: optimizeLegibility; /* optional: for older browsers */
+  -webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+  font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
+}
+
+.b-page_system_high-galactic {
+  font-family: Verdana, Tahoma;
+}
+
+.b-page_system_aurebesh {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+}
+
+.b-language {
+
+}
+
+.b-language__aurebesh {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+  font-size: 14px;
+  /*    border-color: white;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;*/
+
+  padding: 3px;
+  float: right;
+}
+
+.b-language__high-galactic {
+  font-family: Verdana, Tahoma;
+  font-size: 11px;
+  /*    border-color: white;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;*/
+  padding: 3px;
+  float: right;
+}
+
+.b-language__link {
+  text-decoration: none;
+  color: silver;
+}
+
+.b-language__link_active_yes {
+  color: yellow;
+  pointer-events: none;
+  cursor: default;
+}
+
+.b-page-header {
+  /*font-family: "Aurebesh", Verdana, Tahoma;*/
+  font-size: 72px;
+  text-align: center;
+  color: yellow;
+}
+
+.b-game-field {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.b-active-task {
+  float: left;
+  vertical-align: top;
+  margin-left: 40px;
+  margin-top: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #0f0f0f;
+  background-color: #0f0f0f;
+}
+
+.b-active-task__caption {
+  color: gray;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.b-active-task__container {
+  background-image: url(/img/crt-background.png);
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 310px;
+}
+
+.b-active-task__card {
+  color: #5eaecc;
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  border-radius: 8px;
+  /*height: 230px;*/
+  /*line-height: 200px;*/
+}
+
+.b-active-task__symbol {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+  font-size: 240px;
+  text-shadow: 2px 2px 8px #5eaecc;
+}
+
+.b-active-task__answer {
+  padding: 20px;
+}
+
+.b-active-task__answer__label {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 8px gray;
+  margin-right: 10px;
+}
+
+.b-active-task__answer__input {
+  padding: 5px;
+  background-color: black;
+  font-family: Verdana, Tahoma;
+  font-size: 20px;
+  font-weight: bold;
+  color: #5eaecc;
+  text-align: center;
+  text-transform: uppercase;
+  border-width: 1px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.b-active-task__answer__input:focus{
+  border-radius: 8px;
+}
+
+.b-active-task__answer__button {
+  padding: 5px;
+  background-color: transparent;
+  /*font-family: Verdana, Tahoma;*/
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 8px;
+  width: 60px;
+  text-shadow: 2px 2px 8px gray;
+}
+
+.b-status {
+  /*float: left;*/
+  /*background-image: url(http://davidocchino.com/portfolio/typography/aurebesh-font-art/images/background_12.jpg);*/
+  float: left;
+  vertical-align: top;
+  margin-left: 40px;
+  margin-top: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #0f0f0f;
+  background-color: #0f0f0f;
+}
+
+.b-status__caption {
+  color: gray;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.b-status__container {
+  background-image: url(/img/crt-background.png);
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /*width: 300px;*/
+}
+
+.p-status__well-learnt {
+  color: #00ff00;
+  padding: 20px;
+  /*margin-left: 40px;*/
+  /*float: left;*/
+  /*float: left;*/
+  display: table-cell;
+  width: 120px;
+  text-shadow: 2px 2px 8px #00ff00;
+}
+
+.p-status__well-learnt__caption {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px gray;
+}
+
+.p-status__in-learning {
+  background-image: url(/img/crt-background.png);
+  /*color: #00cccc;*/
+  padding: 20px;
+  color: #5eaecc;
+  /*margin-left: 40px;*/
+  /*float: left;*/
+  /*float: left;*/
+  display: table-cell;
+  width: 120px;
+  text-shadow: 2px 2px 8px #5eaecc;
+}
+
+.p-status__in-learning__caption {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px gray;
+}
+
+.p-status__to-learn {
+  background-image: url(/img/crt-background.png);
+  color: red;
+  padding: 20px;
+  /*margin-left: 40px;*/
+  /*float: left;*/
+  /*float: left;*/
+  display: table-cell;
+  width: 120px;
+  text-shadow: 2px 2px 8px red;
+}
+
+.p-status__to-learn__caption {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px gray;
+}
+
+.b-status__letter {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+  width: 30px;
+  display: inline-block;
+  font-size: 22px;
+  float: left;
+}
+
+.b-statistics {
+  float: left;
+  margin-left: 40px;
+  vertical-align: top;
+  margin-left: 40px;
+  margin-top: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #0f0f0f;
+  background-color: #0f0f0f;
+}
+
+.b-statistics__caption {
+  color: gray;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.b-statistics__container {
+  background-image: url(/img/crt-background.png);
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /*width: 300px;*/
+}
+
+.b-statistics__answer {
+  padding: 20px;
+}
+
+.b-answer-indicator {
+  /*margin-top: 40px;*/
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px gray;
+}
+
+.b-answer-indicator__text {
+  /*font-size: 20px;*/
+  /*text-transform: uppercase;*/
+  margin-bottom: 20px;
+}
+
+.b-answer-indicator__explanation {
+  /*font-size: 20px;*/
+  /*text-transform: uppercase;*/
+  margin-bottom: 20px;
+}
+
+.b-answer-indicator__explanation__aub {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+  font-size: 22px;
+}
+
+.b-answer-indicator__explanation__hg {
+  font-family: Verdana, Tahoma;
+}
+
+.p-answer-indicator__right {
+  /* background-color: greenyellow; */
+  color: #00ff00;
+  /*padding: 10px;*/
+  /*text-align: center;*/
+  /*border-style: solid;*/
+  /*border-color: green;*/
+  /*border-width: 1px;*/
+  text-shadow: 2px 2px 8px #00ff00;
+}
+
+.p-answer-indicator__right__active_no1 {
+  display: none;
+}
+
+.p-answer-indicator__right__active_yes1 {
+  display: box;
+}
+
+.p-answer-indicator__wrong {
+  /* background-color: greenyellow; */
+  color: red;
+  /*padding: 10px;*/
+  /*text-align: center;*/
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  /*border-width: 1px;*/
+  text-shadow: 2px 2px 8px red;
+}
+
+.p-answer-indicator__wrong__active_no1 {
+  display: none;
+}
+
+.p-answer-indicator__wrong__active_yes1 {
+  display: box;
+}
+
+.b-statistics__totals {
+  padding: 20px;
+}
+
+.b-statistics__row {
+  margin-top: 10px;
+  color: gray;
+  font-weight: bolder;
+  text-shadow: 2px 2px 8px darkblue;
+}
+
+.b-statistics__row-name {
+  width: 140px;
+  display: inline-block;
+}
+
+.b-statistics__row-value {
+  float: right;
+}
+
+.b-font-sample__aurebesh {
+  font-family: "Aurebesh", Verdana, Tahoma;
+  font-size: 36px;
+  display: none;
+}
+
+.b-font-sample__aurebesh_inv {
+  font-family: "AurebeshInv", Verdana, Tahoma;
+  font-size: 36px;
+  display: none;
+}
+
+.b-font-sample__aurebesh_tech {
+  font-family: "AurebeshTech", Verdana, Tahoma;
+  font-size: 36px;
+  display: none;
+}
+
+.b-font-sample__aurebesh_tech_inv {
+  font-family: "AurebeshTechInv", Verdana, Tahoma;
+  font-size: 36px;
+  display: none;
+}
+
+.b-font-sample__aurebesh_inverted_capitals {
+  font-family: "AurebeshInvertedCapitals", Verdana, Tahoma;
+  /*text-rendering: "optimizeLegibility";*/
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  font-size: 36px;
+  display: none;
+}
+
+
 .main {
   display: flex;
   flex-direction: column;
