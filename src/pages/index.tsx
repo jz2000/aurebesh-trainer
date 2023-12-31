@@ -1,8 +1,14 @@
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import '../components/starter'
+import { init } from '../components/starter'
 
 export default function Home() {
+
+  useEffect(() => {
+    init();
+  }, []);
+
   return (
     <>
       <Head>
@@ -123,11 +129,6 @@ export default function Home() {
         <div className={styles['b-font-sample__aurebesh_inverted_capitals']}>
           <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
         </div>
-
-          <span className={styles['b-status__letter']}>[letter.letter]</span>
-          {/*<span>{{letter.hits}}</span>*/}
-          {/*<span>{{letter.misses}}</span>*/}
-          {/*<span>{{letter.hitsAfterLastMiss}}</span>*/}
       </main>
     </>
   )

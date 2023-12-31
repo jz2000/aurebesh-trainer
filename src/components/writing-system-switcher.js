@@ -1,21 +1,23 @@
+import styles from '@/styles/Home.module.css'
+
 export function switchToHighGalactic() {
-    var page = document.querySelector('.b-page');
-    page.classList.remove('b-page_system_aurebesh');
-    page.classList.add('b-page_system_high-galactic');
+    var page = document.querySelector(`.${styles['b-page']}`);
+    page.classList.remove(styles['b-page_system_aurebesh']);
+    page.classList.add(styles['b-page_system_high-galactic']);
     var linkHg = document.querySelector('#js-language-high-galactic');
     var linkAurebesh = document.querySelector('#js-language-aurebesh');
-    linkHg.classList.add('b-language__link_active_yes');
-    linkAurebesh.classList.remove('b-language__link_active_yes');
+    linkHg.classList.add(styles['b-language__link_active_yes']);
+    linkAurebesh.classList.remove(styles['b-language__link_active_yes']);
 }
 
 export function switchToAurebesh() {
-    var page = document.querySelector('.b-page');
-    page.classList.add('b-page_system_aurebesh');
-    page.classList.remove('b-page_system_high-galactic');
+    var page = document.querySelector(`.${styles['b-page']}`);
+    page.classList.add(styles['b-page_system_aurebesh']);
+    page.classList.remove(styles['b-page_system_high-galactic']);
     var linkHg = document.querySelector('#js-language-high-galactic');
     var linkAurebesh = document.querySelector('#js-language-aurebesh');
-    linkHg.classList.remove('b-language__link_active_yes');
-    linkAurebesh.classList.add('b-language__link_active_yes');
+    linkHg.classList.remove(styles['b-language__link_active_yes']);
+    linkAurebesh.classList.add(styles['b-language__link_active_yes']);
 }
 
 export function wireUpLanguageSwitch() {

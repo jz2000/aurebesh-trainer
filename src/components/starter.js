@@ -1,3 +1,5 @@
 import * as app from './app';
 
-app.initialize();
+export const init = () => {
+    app.initialize();
+};

@@ -1,3 +1,5 @@
+import styles from '@/styles/Home.module.css'
+
 export function renderResult(task, answer) {
     var explAb = document.querySelector('#js-answer-explanation__aub');
     explAb.textContent = task;
@@ -15,9 +17,9 @@ export function renderTotal(total) {
 }
 
 export function flashRightAnswer() {
-    var node = document.querySelector('.b-answer-indicator');
-    node.classList.add('p-answer-indicator__right');
-    node.classList.remove('p-answer-indicator__wrong');
+    var node = document.querySelector(`.${styles['b-answer-indicator']}`);
+    node.classList.add(styles['p-answer-indicator__right']);
+    node.classList.remove(styles['p-answer-indicator__wrong']);
     var textNode = document.querySelector('#js-answer-text');
     textNode.textContent = 'Correct';
 //    setTimeout(function() {
@@ -27,9 +29,9 @@ export function flashRightAnswer() {
 }
 
 export function flashWrongAnswer() {
-    var node = document.querySelector('.b-answer-indicator');
-    node.classList.remove('p-answer-indicator__right');
-    node.classList.add('p-answer-indicator__wrong');
+    var node = document.querySelector(`.${styles['b-answer-indicator']}`);
+    node.classList.remove(styles['p-answer-indicator__right']);
+    node.classList.add(styles['p-answer-indicator__wrong']);
     var textNode = document.querySelector('#js-answer-text');
     textNode.textContent = 'Miss';
 //    setTimeout(function() {
@@ -39,12 +41,18 @@ export function flashWrongAnswer() {
 }
 
 function renderTemplate(templateName, letter) {
-    var template = document.getElementById(templateName).innerHTML;
+    // var template = document.getElementById(templateName).innerHTML;
+    var template = `
+          <span className={styles['b-status__letter']}>[[letter.letter]]</span>
+          <span>[[letter.hits]]</span>
+          <span>[[letter.misses]]</span>
+          <span>[[letter.hitsAfterLastMiss]]</span>
+    `;
     var html = template
-        .replace(/{{letter.letter}}/g, letter.letter)
-        .replace(/{{letter.hits}}/g, letter.hits)
-        .replace(/{{letter.misses}}/g, letter.misses)
-        .replace(/{{letter.hitsAfterLastMiss}}/g, letter.hitsAfterLastMiss);
+        .replace(/\[\[letter.letter\]\]/g, letter.letter)
+        .replace(/\[\[letter.hits\]\]/g, letter.hits)
+        .replace(/\[\[letter.misses\]\]/g, letter.misses)
+        .replace(/\[\[letter.hitsAfterLastMiss\]\]/g, letter.hitsAfterLastMiss);
     var resultNode = document.createElement('span');
     resultNode.innerHTML = html;
     return resultNode;
