@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-// import { useAbtSession } from '../components/abtSession';
+import { useAbtSession } from '../components/abtSession';
 import { AbtUiLanguageControl } from '../components/AbtUiLanguageControl';
 import { AbtUiLanguage } from '../components/abtTypes';
 import { AbtActiveTaskPanel } from '../components/AbtActiveTaskPanel';
@@ -10,7 +10,7 @@ import { AbtLearningProgressPanel } from '../components/AbtLearningProgressPanel
 
 export default function Home() {
   const [abtUiLanguage, setAbtUiLanguage] = useState<AbtUiLanguage>('high_galactic');
-  // const abtSession = useAbtSession();
+  const abtSession = useAbtSession();
 
   return (
     <>
@@ -29,7 +29,14 @@ export default function Home() {
         <div className={styles['b-game-field']}>
           <AbtActiveTaskPanel />
 
-          <AbtSessionStatsPanel />
+          <AbtSessionStatsPanel
+              totalAttempts={abtSession.totalAttempts}
+              totalHits={abtSession.totalHits}
+              totalMisses={abtSession.totalMisses}
+              lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
+              lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
+              lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
+          />
 
           <AbtLearningProgressPanel />
 
