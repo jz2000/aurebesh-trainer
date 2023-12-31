@@ -29,7 +29,10 @@ export default function Home() {
 
         <NoSsr>
           <div className={styles['b-game-field']}>
-            <AbtActiveTaskPanel />
+            <AbtActiveTaskPanel
+                currentTaskLetter={abtSession.currentTask.letter}
+                onSubmitAnswer={abtSession.submitCurrentTaskAnswer}
+            />
 
             <AbtSessionStatsPanel
                 totalAttempts={abtSession.totalAttempts}
