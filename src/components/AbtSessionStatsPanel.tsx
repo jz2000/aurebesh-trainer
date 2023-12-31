@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "*.module.css";
+import styles from '@/styles/Home.module.css'
 
 export type AbtSessionStatsPanelProps = {
 
