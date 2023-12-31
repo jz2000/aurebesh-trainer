@@ -4,10 +4,12 @@ import * as sessionTasks from './session-tasks'
 import * as activeTasks from './active-tasks'
 import * as ui from './ui-binding'
 
-var total = {
+const total = {
     tasks : 0,
     hits : 0,
-    misses : 0
+    misses : 0,
+    lastHit: new Date(),
+    lastMiss: new Date(),
 };
 
 function renderStatus() {

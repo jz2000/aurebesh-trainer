@@ -1,4 +1,6 @@
-export function Letter(letter) {
+import { Task } from './active-tasks';
+
+export function Letter(letter): Task {
     return {
         letter : letter,
         attempts : 0,
