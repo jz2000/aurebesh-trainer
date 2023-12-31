@@ -6,6 +6,7 @@ import { AbtUiLanguageControl } from '../components/AbtUiLanguageControl';
 import { AbtUiLanguage } from '../components/abtTypes';
 import { AbtActiveTaskPanel } from '../components/AbtActiveTaskPanel';
 import { AbtSessionStatsPanel } from '../components/AbtSessionStatsPanel';
+import { AbtLearningProgressPanel } from '../components/AbtLearningProgressPanel';
 
 export default function Home() {
   const [abtUiLanguage, setAbtUiLanguage] = useState<AbtUiLanguage>('high_galactic');
@@ -30,28 +31,7 @@ export default function Home() {
 
           <AbtSessionStatsPanel />
 
-          <div className={styles['b-status']}>
-            <div className={styles['b-status__caption']}>
-              <span>Progress</span>
-            </div>
-            <div className={styles['b-status__container']}>
-              <div className={styles['p-status__to-learn']}>
-                <div className={styles['p-status__to-learn__caption']}>To Learn</div>
-                <div id="js-letters-to-learn">
-                </div>
-              </div>
-              <div className={styles['p-status__in-learning']}>
-                <div className={styles['p-status__in-learning__caption']}>Learning</div>
-                <div id="js-letters-in-learning">
-                </div>
-              </div>
-              <div className={styles['p-status__well-learnt']}>
-                <div className={styles['p-status__well-learnt__caption']}>Learnt</div>
-                <div id="js-letters-well-learnt">
-                </div>
-              </div>
-            </div>
-          </div>
+          <AbtLearningProgressPanel />
 
         </div>
 
