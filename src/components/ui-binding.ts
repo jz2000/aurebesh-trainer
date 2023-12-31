@@ -106,7 +106,7 @@ export function renderCurrentTask(currentTask) {
     taskPlace.textContent = currentTask.letter;
     var answerForm = document.querySelector('#answer-form');
     //answerForm.dataset.answer = letter;
-    var answerNode = document.querySelector('#answer');
+    var answerNode = document.querySelector('#answer') as HTMLInputElement;
     answerNode.value = '';
     answerNode.focus();
 }
@@ -115,7 +115,7 @@ export function wireUpForm(answerCallback) {
     var form = document.querySelector('#answer-form');
     form.addEventListener('submit', function submitForm(e) {
         e.preventDefault();
-        var answerNode = document.querySelector('#answer');
+        var answerNode = document.querySelector('#answer') as HTMLInputElement;
         var answer = answerNode.value.trim();
         answerCallback(answer);
     });

@@ -1,18 +1,38 @@
-var recommendedPoolLength = 4;
+export type Task = {
+    letter: string;
+    attempts: number;
+    hits: number;
+    misses: number;
+    hitsAfterLastMiss: number;
+};
 
-var maximumPoolLength = 10;
+let recommendedPoolLength = 4;
 
-var taskPool = [];
+const maximumPoolLength = 10;
 
-var currentTask = {};
+let taskPool: Task[] = [];
+
+let currentTask: Task = {
+    letter: '',
+    attempts: 0,
+    hits: 0,
+    misses: 0,
+    hitsAfterLastMiss: 0,
+};
 
 export function reset() {
     taskPool = [];
-    currentTask = {};
+    currentTask = {
+        letter: '',
+        attempts: 0,
+        hits: 0,
+        misses: 0,
+        hitsAfterLastMiss: 0,
+    };
     recommendedPoolLength = 4;
 }
 
-export function generateTask() {
+export function generateTask(): Task {
     var nextTask = currentTask;
     while (nextTask === currentTask) {
         var taskIndex = Math.floor((Math.random() * taskPool.length));
@@ -65,6 +85,6 @@ export function getTaskPool() {
     return taskPool.slice(0, taskPool.length);
 }
 
-export function getCurrentTask() {
+export function getCurrentTask(): Task {
     return currentTask;
 }

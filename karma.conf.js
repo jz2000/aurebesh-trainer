@@ -5,8 +5,8 @@ module.exports = function(config) {
         files: [
             {pattern: './test/stub/ui-binding-stub.js', included: false},
             {pattern: './test/stub/writing-system-switcher-stub.js', included: false},
-            {pattern: './public_html/js/ui-binding.js', included: false},
-            {pattern: './public_html/js/writing-system-switcher.js', included: false},
+            {pattern: './public_html/js/ui-binding.ts', included: false},
+            {pattern: './public_html/js/writing-system-switcher.ts', included: false},
             {pattern: './public_html/js/tasks.js', included: false},
             {pattern: './public_html/js/session-mem.js', included: false},
             {pattern: './public_html/js/active-tasks.js', included: false},
