@@ -89,7 +89,8 @@ export const useAbtSession = (): AbtSession => {
     const [lastHit, setLastHit] = useState<Date>(new Date());
     const [lastMiss, setLastMiss] = useState<Date>(new Date());
     const previousTask = useRef<AbtTask | null>(null);
-    const currentTask = selectNextTask(immediateTaskPool, previousTask.current);
+    const [lastTask, setLastTask] = useState<AbtTask | null>(null);
+    const currentTask = selectNextTask(immediateTaskPool, lastTask);
 
     const checkPoolRust = () => {
         const result = [];
@@ -126,7 +127,25 @@ export const useAbtSession = (): AbtSession => {
         }
     }
 
-    const lastTask = previousTask.current;
+    const submitCurrentTaskAnswer = (answer: string): void => {
+        const sanitizedAnswer = answer.toUpperCase();
+        currentTask.lastAnswer = sanitizedAnswer;
+        currentTask.lastAnswerStatus = currentTask.letter === sanitizedAnswer ? 'correct' : 'incorrect';
+        currentTask.attempts++;
+        setTotalAttempts((totalAttempts) => (totalAttempts + 1));
+        if (currentTask.lastAnswerStatus === 'correct') {
+            currentTask.hits++;
+            setTotalHits((totalHits) => (totalHits + 1));
+        }
+        if (currentTask.lastAnswerStatus === 'incorrect') {
+            currentTask.misses++;
+            setTotalMisses((totalMisses) => (totalMisses + 1));
+        }
+        setLastTask(currentTask);
+        checkPoolRust();
+        checkImmediatePoolExpansion();
+        refillTaskPool();
+    };
 
     previousTask.current = currentTask;
 
@@ -138,5 +157,6 @@ export const useAbtSession = (): AbtSession => {
         lastMiss,
         lastTask,
         currentTask,
+        submitCurrentTaskAnswer,
     };
 }

@@ -18,6 +18,7 @@ export type AbtSession = {
     lastMiss: Date,
     currentTask: AbtTask;
     lastTask: AbtTask | null;
+    submitCurrentTaskAnswer: (answer: string) => void;
 };
 
 export type AbtUiLanguage = 'aurebesh' | 'high_galactic';
