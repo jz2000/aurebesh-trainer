@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/AbtLearningprogressPanel.module.css'
 import { AbtTask } from './abtTypes';
 
 export type AbtLearningProgressPanelProps = {
@@ -32,27 +32,27 @@ export const AbtLearningProgressPanel = (props: AbtLearningProgressPanelProps): 
     const wellLearntTasks = determineWellLearntTasks(props.programTaskPool);
     const tasksInLearning = props.immediateTaskPool;
     return (
-        <div className={styles['b-status']}>
-            <div className={styles['b-status__caption']}>
+        <div className={styles.b_status}>
+            <div className={styles.b_status__caption}>
                 <span>Progress</span>
             </div>
-            <div className={styles['b-status__container']}>
-                <div className={styles['p-status__to-learn']}>
-                    <div className={styles['p-status__to-learn__caption']}>To Learn</div>
+            <div className={styles.b_status__container}>
+                <div className={styles.p_status__to_learn}>
+                    <div className={styles.p_status__to_learn__caption}>To Learn</div>
                     <div id="js-letters-to-learn">
-                        {tasksToLearn.map((task) => (<span key={task.letter} className={styles['b-status__letter']}>{task.letter}</span>))}
+                        {tasksToLearn.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
-                <div className={styles['p-status__in-learning']}>
-                    <div className={styles['p-status__in-learning__caption']}>Learning</div>
+                <div className={styles.p_status__in_learning}>
+                    <div className={styles.p_status__in_learning__caption}>Learning</div>
                     <div id="js-letters-in-learning">
-                        {tasksInLearning.map((task) => (<span key={task.letter} className={styles['b-status__letter']}>{task.letter}</span>))}
+                        {tasksInLearning.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
-                <div className={styles['p-status__well-learnt']}>
-                    <div className={styles['p-status__well-learnt__caption']}>Learnt</div>
+                <div className={styles.p_status__well_learnt}>
+                    <div className={styles.p_status__well_learnt__caption}>Learnt</div>
                     <div id="js-letters-well-learnt">
-                        {wellLearntTasks.map((task) => (<span key={task.letter} className={styles['b-status__letter']}>{task.letter}</span>))}
+                        {wellLearntTasks.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
             </div>

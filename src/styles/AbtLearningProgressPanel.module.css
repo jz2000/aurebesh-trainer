@@ -1,0 +1,94 @@
+.b_status {
+    /*float: left;*/
+    /*background-image: url(http://davidocchino.com/portfolio/typography/aurebesh-font-art/images/background_12.jpg);*/
+    float: left;
+    vertical-align: top;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: #0f0f0f;
+    background-color: #0f0f0f;
+}
+
+.b_status__caption {
+    color: gray;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.b_status__container {
+    background-image: url(/aurebesh-trainer/img/crt-background.png);
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /*width: 300px;*/
+}
+
+.p_status__well_learnt {
+    color: #00ff00;
+    padding: 20px;
+    /*margin-left: 40px;*/
+    /*float: left;*/
+    /*float: left;*/
+    display: table-cell;
+    width: 120px;
+    text-shadow: 2px 2px 8px #00ff00;
+}
+
+.p_status__well_learnt__caption {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 8px gray;
+}
+
+.p_status__in_learning {
+    background-image: url(/aurebesh-trainer/img/crt-background.png);
+    /*color: #00cccc;*/
+    padding: 20px;
+    color: #5eaecc;
+    /*margin-left: 40px;*/
+    /*float: left;*/
+    /*float: left;*/
+    display: table-cell;
+    width: 120px;
+    text-shadow: 2px 2px 8px #5eaecc;
+}
+
+.p_status__in_learning__caption {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 8px gray;
+}
+
+.p_status__to_learn {
+    background-image: url(/aurebesh-trainer/img/crt-background.png);
+    color: red;
+    padding: 20px;
+    /*margin-left: 40px;*/
+    /*float: left;*/
+    /*float: left;*/
+    display: table-cell;
+    width: 120px;
+    text-shadow: 2px 2px 8px red;
+}
+
+.p_status__to_learn__caption {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 8px gray;
+}
+
+.b_status__letter {
+    font-family: "AurebeshInv", Verdana, Tahoma;
+    width: 30px;
+    display: inline-block;
+    font-size: 22px;
+    float: left;
+}
