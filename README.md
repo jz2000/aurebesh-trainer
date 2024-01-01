@@ -24,3 +24,7 @@ Web Page to Learn Star Wars Aurebesh Scripting System
     npm run dev
     ```
 5. Open the [page](http://localhost:3000)
+
+## Where it is deployed
+
+[GitHub Pages](https://jz2000.github.io/aurebesh-trainer/)
