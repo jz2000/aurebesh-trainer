@@ -148,7 +148,7 @@ export const useAbtSession = (): AbtSession => {
         setLastTask(currentTask);
         const cleanedUpPool = checkPoolRust(immediateTaskPool);
         const newRecommendedPoolSize = checkImmediatePoolExpansion(cleanedUpPool, recommendedImmediatePoolLength);
-        const refilledPool = refillTaskPool(cleanedUpPool, newRecommendedPoolSize);
+        const refilledPool = refillTaskPool(programTaskPool, cleanedUpPool, newRecommendedPoolSize);
         setRecommendedImmediatePoolLength(newRecommendedPoolSize);
         setImmediateTaskPool(refilledPool);
     };
