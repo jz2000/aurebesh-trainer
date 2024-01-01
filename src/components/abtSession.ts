@@ -128,7 +128,7 @@ export const useAbtSession = (): AbtSession => {
     }
 
     const submitCurrentTaskAnswer = (answer: string): void => {
-        const sanitizedAnswer = answer.toUpperCase();
+        const sanitizedAnswer = answer.toUpperCase().trim();
         currentTask.lastAnswer = sanitizedAnswer;
         currentTask.lastAnswerStatus = currentTask.letter === sanitizedAnswer ? 'correct' : 'incorrect';
         currentTask.attempts++;
