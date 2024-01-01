@@ -1,0 +1,37 @@
+.b_language {
+
+}
+
+.b_language__aurebesh {
+    font-family: "AurebeshInv", Verdana, Tahoma;
+    font-size: 14px;
+    /*    border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 2px;*/
+
+    padding: 3px;
+    float: right;
+}
+
+.b_language__high_galactic {
+    font-family: Verdana, Tahoma;
+    font-size: 11px;
+    /*    border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 2px;*/
+    padding: 3px;
+    float: right;
+}
+
+.b_language__link {
+    text-decoration: none;
+    color: silver;
+}
+
+.b_language__link_active_yes {
+    color: yellow;
+    pointer-events: none;
+    cursor: default;
+}

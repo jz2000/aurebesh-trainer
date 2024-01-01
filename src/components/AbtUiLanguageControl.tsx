@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/AbtUiLanguageControl.module.css'
 import { AbtUiLanguage } from './abtTypes';
 
 
@@ -20,21 +20,21 @@ export const AbtUiLanguageControl = (props: AbtUiLanguageControlProps): React.Re
     };
 
     return (
-        <div className={styles['b-language']}>
-            <div className={styles['b-language__aurebesh']}>
+        <div className={styles.b_language}>
+            <div className={styles.b_language__aurebesh}>
                 <a
                     href="#"
-                    className={`${styles['b-language__link']} ${props.currentAbtUiLanguage === 'aurebesh' ? styles['b-language__link_active_yes'] : ''}`}
+                    className={`${styles.b_language__link} ${props.currentAbtUiLanguage === 'aurebesh' ? styles.b_language__link_active_yes : ''}`}
                     id="js-language-aurebesh"
                     onClick={onAurebeshLinkClick}
                 >
                     ab
                 </a>
             </div>
-            <div className={styles['b-language__high-galactic']}>
+            <div className={styles.b_language__high_galactic}>
                 <a
                     href="#"
-                    className={`${styles['b-language__link']} ${props.currentAbtUiLanguage === 'high_galactic' ? styles['b-language__link_active_yes'] : ''}`}
+                    className={`${styles.b_language__link} ${props.currentAbtUiLanguage === 'high_galactic' ? styles.b_language__link_active_yes : ''}`}
                     id="js-language-high-galactic"
                     onClick={onHighGalacticLinkClick}
                 >
