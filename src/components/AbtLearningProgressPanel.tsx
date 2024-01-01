@@ -39,19 +39,19 @@ export const AbtLearningProgressPanel = (props: AbtLearningProgressPanelProps): 
             <div className={styles.b_status__container}>
                 <div className={styles.p_status__to_learn}>
                     <div className={styles.p_status__to_learn__caption}>To Learn</div>
-                    <div id="js-letters-to-learn">
+                    <div id="js-letters-to-learn" className={styles.b_status__letterset}>
                         {tasksToLearn.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
                 <div className={styles.p_status__in_learning}>
                     <div className={styles.p_status__in_learning__caption}>Learning</div>
-                    <div id="js-letters-in-learning">
+                    <div id="js-letters-in-learning" className={styles.b_status__letterset}>
                         {tasksInLearning.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
                 <div className={styles.p_status__well_learnt}>
                     <div className={styles.p_status__well_learnt__caption}>Learnt</div>
-                    <div id="js-letters-well-learnt">
+                    <div id="js-letters-well-learnt" className={styles.b_status__letterset}>
                         {wellLearntTasks.map((task) => (<span key={task.letter} className={styles.b_status__letter}>{task.letter}</span>))}
                     </div>
                 </div>
