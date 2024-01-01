@@ -28,13 +28,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles['b-page']} ${abtUiLanguage === 'aurebesh' ? styles['b-page_system_aurebesh'] : styles['b-page_system_high-galactic']}`}>
+      <main className={`${styles.b_page} ${abtUiLanguage === 'aurebesh' ? styles.b_page_system_aurebesh : styles.b_page_system_high_galactic}`}>
         <AbtUiLanguageControl currentAbtUiLanguage={abtUiLanguage} onChangeAbtUiLanguage={setAbtUiLanguage} />
 
-        <div className={styles['b-page-header']}>Aurebesh Trainer</div>
+        <div className={styles.b_page_header}>Aurebesh Trainer</div>
 
         <NoSsr>
-          <div className={styles['b-game-field']}>
+          <div className={styles.b_game_field}>
             <AbtActiveTaskPanel
                 currentTaskLetter={abtSession.currentTask.letter}
                 onSubmitAnswer={abtSession.submitCurrentTaskAnswer}
@@ -56,23 +56,23 @@ export default function Home() {
 
           </div>
 
-          <div className={styles['b-font-sample__aurebesh']}>
+          <div className={styles.b_font_sample__aurebesh}>
             <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
           </div>
 
-          <div className={styles['b-font-sample__aurebesh_inv']}>
+          <div className={styles.b_font_sample__aurebesh_inv}>
             <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
           </div>
 
-          <div className={styles['b-font-sample__aurebesh_tech']}>
+          <div className={styles.b_font_sample__aurebesh_tech}>
             <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
           </div>
 
-          <div className={styles['b-font-sample__aurebesh_tech_inv']}>
+          <div className={styles.b_font_sample__aurebesh_tech_inv}>
             <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
           </div>
 
-          <div className={styles['b-font-sample__aurebesh_inverted_capitals']}>
+          <div className={styles.b_font_sample__aurebesh_inverted_capitals}>
             <span>abcdefghijklmnopqrstuvwxyz1234567890thshookhngcheoae</span>
           </div>
         </NoSsr>

@@ -1,6 +1,6 @@
 @import url(fonts.css);
 
-.b-page {
+.b_page {
   background-color: black;
   color: aliceblue;
   text-rendering: optimizeLegibility; /* optional: for older browsers */
@@ -8,69 +8,53 @@
   font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
 }
 
-.b-page_system_high-galactic {
+.b_page_system_high_galactic {
   font-family: Verdana, Tahoma;
 }
 
-.b-page_system_aurebesh {
+.b_page_system_aurebesh {
   font-family: "AurebeshInv", Verdana, Tahoma;
 }
 
-.b-page-header {
+.b_page_header {
   /*font-family: "Aurebesh", Verdana, Tahoma;*/
   font-size: 72px;
   text-align: center;
   color: yellow;
 }
 
-.b-game-field {
+.b_game_field {
   margin-top: 10px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.p-answer-indicator__right__active_no1 {
-  display: none;
-}
-
-.p-answer-indicator__right__active_yes1 {
-  display: flex;
-}
-
-.p-answer-indicator__wrong__active_no1 {
-  display: none;
-}
-
-.p-answer-indicator__wrong__active_yes1 {
-  display: flex;
-}
-
-.b-font-sample__aurebesh {
+.b_font_sample__aurebesh {
   font-family: "Aurebesh", Verdana, Tahoma;
   font-size: 36px;
   display: none;
 }
 
-.b-font-sample__aurebesh_inv {
+.b_font_sample__aurebesh_inv {
   font-family: "AurebeshInv", Verdana, Tahoma;
   font-size: 36px;
   display: none;
 }
 
-.b-font-sample__aurebesh_tech {
+.b_font_sample__aurebesh_tech {
   font-family: "AurebeshTech", Verdana, Tahoma;
   font-size: 36px;
   display: none;
 }
 
-.b-font-sample__aurebesh_tech_inv {
+.b_font_sample__aurebesh_tech_inv {
   font-family: "AurebeshTechInv", Verdana, Tahoma;
   font-size: 36px;
   display: none;
 }
 
-.b-font-sample__aurebesh_inverted_capitals {
+.b_font_sample__aurebesh_inverted_capitals {
   font-family: "AurebeshInvertedCapitals", Verdana, Tahoma;
   /*text-rendering: "optimizeLegibility";*/
   text-rendering: optimizeLegibility;
