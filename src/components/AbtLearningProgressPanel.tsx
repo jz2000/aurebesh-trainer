@@ -8,7 +8,7 @@ export type AbtLearningProgressPanelProps = {
 };
 
 const determineTasksToLearn = (programTaskPool: AbtTask[]): AbtTask[] => {
-    const result = [];
+    const result: AbtTask[] = [];
     programTaskPool.forEach((task) => {
         if (task.hitsAfterLastMiss < 20) {
             result.push(task);
@@ -18,7 +18,7 @@ const determineTasksToLearn = (programTaskPool: AbtTask[]): AbtTask[] => {
 }
 
 const determineWellLearntTasks = (programTaskPool: AbtTask[]): AbtTask[] => {
-    const result = [];
+    const result: AbtTask[] = [];
     programTaskPool.forEach((task) => {
         if (task.hitsAfterLastMiss >= 20) {
             result.push(task);
