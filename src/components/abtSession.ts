@@ -93,25 +93,25 @@ const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recom
     if (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
         return;
     }
-    const allImmediateTasksLearned = immediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
+    const allImmediateTasksLearned = existingImmediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
     if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
         return recommendedImmediatePoolLength + 1;
     }
     return recommendedImmediatePoolLength;
 }
 
-const refillTaskPool = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): AbtTask[]  => {
+const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): AbtTask[]  => {
     while (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
-        const worstLearnedTask = findWorstLearnedTask(programTaskPool, immediateTaskPool);
+        const worstLearnedTask = findWorstLearnedTask(programTaskPool, existingImmediateTaskPool);
         if (worstLearnedTask) {
-            immediateTaskPoolCopy.push(worstLearnedTask);
+            existingImmediateTaskPool.push(worstLearnedTask);
             continue;
         }
-        console.log('Empty task detected, activeTasks:', immediateTaskPoolCopy);
+        console.log('Empty task detected, activeTasks:', existingImmediateTaskPool);
         console.log('Empty task detected, sessionTasks:', programTaskPool);
         alert('Hello, the impossible error has happend. Check the console.');
     }
-    setImmediateTaskPool(existingImmediateTaskPool);
+    return existingImmediateTaskPool;
 }
 
 export const useAbtSession = (): AbtSession => {
