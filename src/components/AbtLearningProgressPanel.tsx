@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/AbtLearningprogressPanel.module.css'
+import styles from '@/styles/AbtLearningProgressPanel.module.css'
 import { AbtTask } from './abtTypes';
 
 export type AbtLearningProgressPanelProps = {
