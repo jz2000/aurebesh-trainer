@@ -11,6 +11,8 @@ export type AbtTask = {
 export type AbtTaskAnswerStatus = 'correct' | 'incorrect' | 'idle';
 
 export type AbtSession = {
+    programTaskPool: AbtTask[];
+    immediateTaskPool: AbtTask[];
     totalAttempts : number,
     totalHits : number,
     totalMisses : number,

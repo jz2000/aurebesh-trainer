@@ -154,6 +154,8 @@ export const useAbtSession = (): AbtSession => {
     previousTask.current = currentTask;
 
     return {
+        programTaskPool,
+        immediateTaskPool,
         totalAttempts,
         totalHits,
         totalMisses,

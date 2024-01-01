@@ -43,7 +43,10 @@ export default function Home() {
                 lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
             />
 
-            <AbtLearningProgressPanel />
+            <AbtLearningProgressPanel
+                programTaskPool={abtSession.programTaskPool}
+                immediateTaskPool={abtSession.immediateTaskPool}
+            />
 
           </div>
 
