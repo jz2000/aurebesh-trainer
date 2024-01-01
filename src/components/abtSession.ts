@@ -135,11 +135,15 @@ export const useAbtSession = (): AbtSession => {
         setTotalAttempts((totalAttempts) => (totalAttempts + 1));
         if (currentTask.lastAnswerStatus === 'correct') {
             currentTask.hits++;
+            currentTask.hitsAfterLastMiss++;
             setTotalHits((totalHits) => (totalHits + 1));
+            setLastHit(new Date());
         }
         if (currentTask.lastAnswerStatus === 'incorrect') {
             currentTask.misses++;
+            currentTask.hitsAfterLastMiss = 0;
             setTotalMisses((totalMisses) => (totalMisses + 1));
+            setLastMiss(new Date());
         }
         setLastTask(currentTask);
         checkPoolRust();
