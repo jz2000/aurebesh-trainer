@@ -14,7 +14,7 @@ export default function Home() {
   const abtSession = useAbtSession();
 
   useEffect(() => {
-    if (abtSession.totalHits % 100 === 0 && abtUiLanguage === 'high_galactic') {
+    if (abtSession.totalHits > 0 && abtSession.totalHits % 100 === 0 && abtUiLanguage === 'high_galactic') {
       setAbtUiLanguage('aurebesh');
     }
   }, [abtUiLanguage, abtSession.totalHits]);

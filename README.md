@@ -23,7 +23,7 @@ Web Page to Learn Star Wars Aurebesh Scripting System
     ```shell
     npm run dev
     ```
-5. Open the [page](http://localhost:3000)
+5. Open the [page](http://localhost:3000/aurebesh-trainer)
 
 ## Where it is deployed
 

@@ -88,7 +88,7 @@
 }
 
 .b-active-task__container {
-  background-image: url(/img/crt-background.png);
+  background-image: url(/aurebesh-trainer/img/crt-background.png);
   border-radius: 8px;
   margin-left: 10px;
   margin-right: 10px;
@@ -176,7 +176,7 @@
 }
 
 .b-status__container {
-  background-image: url(/img/crt-background.png);
+  background-image: url(/aurebesh-trainer/img/crt-background.png);
   border-radius: 8px;
   margin-left: 10px;
   margin-right: 10px;
@@ -203,7 +203,7 @@
 }
 
 .p-status__in-learning {
-  background-image: url(/img/crt-background.png);
+  background-image: url(/aurebesh-trainer/img/crt-background.png);
   /*color: #00cccc;*/
   padding: 20px;
   color: #5eaecc;
@@ -223,7 +223,7 @@
 }
 
 .p-status__to-learn {
-  background-image: url(/img/crt-background.png);
+  background-image: url(/aurebesh-trainer/img/crt-background.png);
   color: red;
   padding: 20px;
   /*margin-left: 40px;*/
@@ -270,7 +270,7 @@
 }
 
 .b-statistics__container {
-  background-image: url(/img/crt-background.png);
+  background-image: url(/aurebesh-trainer/img/crt-background.png);
   border-radius: 8px;
   margin-left: 10px;
   margin-right: 10px;
