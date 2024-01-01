@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/AbtUiLangiageControl.module.css'
+import styles from '@/styles/AbtUiLanguageControl.module.css'
 import { AbtUiLanguage } from './abtTypes';
 
 
