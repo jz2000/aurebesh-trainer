@@ -89,9 +89,9 @@ const checkPoolRust = (existingImmediateTaskPool: AbtTask[]): AbtTask[] => {
     return result;
 }
 
-const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): number => {
+const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength: number): number => {
     if (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
-        return;
+        return recommendedImmediatePoolLength;
     }
     const allImmediateTasksLearned = existingImmediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
     if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
@@ -100,7 +100,7 @@ const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recom
     return recommendedImmediatePoolLength;
 }
 
-const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): AbtTask[]  => {
+const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength: number): AbtTask[]  => {
     while (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
         const worstLearnedTask = findWorstLearnedTask(programTaskPool, existingImmediateTaskPool);
         if (worstLearnedTask) {

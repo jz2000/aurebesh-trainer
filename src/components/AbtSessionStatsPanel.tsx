@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '@/styles/Home.module.css'
-import {AbtTask, AbtTaskAnswerStatus} from './abtTypes';
+import { AbtTaskAnswerStatus } from './abtTypes';
 
 export type AbtSessionStatsPanelProps = {
-    lastTaskLetter: AbtTask;
+    lastTaskLetter: string;
     lastTaskAnswer: string;
     lastTaskAnswerStatus: AbtTaskAnswerStatus;
     totalAttempts: number;

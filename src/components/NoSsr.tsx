@@ -4,7 +4,7 @@ export type NoSsrProps = {
     children: React.ReactNode;
 };
 
-export const NoSsr = (props: NoSsrProps): React.ReactElement => {
+export const NoSsr = (props: NoSsrProps): React.ReactNode => {
     const [ssr, setSsr] = useState<boolean>(true);
 
     useEffect(() => {
