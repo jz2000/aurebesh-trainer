@@ -17,9 +17,7 @@ export default function Home() {
     if (abtSession.totalHits % 100 === 0 && abtUiLanguage === 'high_galactic') {
       setAbtUiLanguage('aurebesh');
     }
-  }, [
-      abtSession.totalHits
-  ]);
+  }, [abtUiLanguage, abtSession.totalHits]);
 
   return (
     <>
