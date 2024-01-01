@@ -79,6 +79,41 @@ const initializeImmediateTaskPool = (programTasks: AbtTask[], recommendedImmedia
     return result;
 };
 
+const checkPoolRust = (existingImmediateTaskPool: AbtTask[]): AbtTask[] => {
+    const result = [];
+    existingImmediateTaskPool.forEach((task) => {
+        if (task.hitsAfterLastMiss < 20) {
+            result.push(task);
+        }
+    });
+    return result;
+}
+
+const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): number => {
+    if (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
+        return;
+    }
+    const allImmediateTasksLearned = immediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
+    if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
+        return recommendedImmediatePoolLength + 1;
+    }
+    return recommendedImmediatePoolLength;
+}
+
+const refillTaskPool = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): AbtTask[]  => {
+    while (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
+        const worstLearnedTask = findWorstLearnedTask(programTaskPool, immediateTaskPool);
+        if (worstLearnedTask) {
+            immediateTaskPoolCopy.push(worstLearnedTask);
+            continue;
+        }
+        console.log('Empty task detected, activeTasks:', immediateTaskPoolCopy);
+        console.log('Empty task detected, sessionTasks:', programTaskPool);
+        alert('Hello, the impossible error has happend. Check the console.');
+    }
+    setImmediateTaskPool(existingImmediateTaskPool);
+}
+
 export const useAbtSession = (): AbtSession => {
     const programTaskPool = useMemo<AbtTask[]>(() => generateProgramTaskPool(), []);
     const [recommendedImmediatePoolLength, setRecommendedImmediatePoolLength] = useState<number>(4);
@@ -91,41 +126,6 @@ export const useAbtSession = (): AbtSession => {
     const previousTask = useRef<AbtTask | null>(null);
     const [lastTask, setLastTask] = useState<AbtTask | null>(null);
     const currentTask = selectNextTask(immediateTaskPool, lastTask);
-
-    const checkPoolRust = () => {
-        const result = [];
-        immediateTaskPool.forEach((task) => {
-            if (task.hitsAfterLastMiss < 20) {
-                result.push(task);
-            }
-        });
-        setImmediateTaskPool(result);
-    }
-
-    const refillTaskPool = (): void  => {
-        const immediateTaskPoolCopy = immediateTaskPool;
-        while (immediateTaskPoolCopy.length < recommendedImmediatePoolLength) {
-            const worstLearnedTask = findWorstLearnedTask(programTaskPool, immediateTaskPool);
-            if (worstLearnedTask) {
-                immediateTaskPoolCopy.push(worstLearnedTask);
-            } else {
-                console.log('Empty task detected, activeTasks:', immediateTaskPoolCopy);
-                console.log('Empty task detected, sessionTasks:', programTaskPool);
-                alert('Hello, the impossible error has happend. Check the console.');
-            }
-        }
-        setImmediateTaskPool(immediateTaskPoolCopy);
-    }
-
-    const checkImmediatePoolExpansion = () => {
-        if (immediateTaskPool.length < recommendedImmediatePoolLength) {
-            return;
-        }
-        const allImmediateTasksLearned = immediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
-        if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
-            setRecommendedImmediatePoolLength(recommendedImmediatePoolLength + 1);
-        }
-    }
 
     const submitCurrentTaskAnswer = (answer: string): void => {
         const sanitizedAnswer = answer.toUpperCase().trim();
@@ -146,9 +146,11 @@ export const useAbtSession = (): AbtSession => {
             setLastMiss(new Date());
         }
         setLastTask(currentTask);
-        checkPoolRust();
-        checkImmediatePoolExpansion();
-        refillTaskPool();
+        const cleanedUpPool = checkPoolRust(immediateTaskPool);
+        const newRecommendedPoolSize = checkImmediatePoolExpansion(cleanedUpPool, recommendedImmediatePoolLength);
+        const refilledPool = refillTaskPool(cleanedUpPool, newRecommendedPoolSize);
+        setRecommendedImmediatePoolLength(newRecommendedPoolSize);
+        setImmediateTaskPool(refilledPool);
     };
 
     previousTask.current = currentTask;
