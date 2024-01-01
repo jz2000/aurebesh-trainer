@@ -211,79 +211,6 @@
   float: left;
 }
 
-.b-statistics {
-  float: left;
-  margin-left: 40px;
-  vertical-align: top;
-  margin-left: 40px;
-  margin-top: 40px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 8px;
-  border-color: #0f0f0f;
-  background-color: #0f0f0f;
-}
-
-.b-statistics__caption {
-  color: gray;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.b-statistics__container {
-  background-image: url(/aurebesh-trainer/img/crt-background.png);
-  border-radius: 8px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  /*width: 300px;*/
-}
-
-.b-statistics__answer {
-  padding: 20px;
-}
-
-.b-answer-indicator {
-  /*margin-top: 40px;*/
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px gray;
-}
-
-.b-answer-indicator__text {
-  /*font-size: 20px;*/
-  /*text-transform: uppercase;*/
-  margin-bottom: 20px;
-}
-
-.b-answer-indicator__explanation {
-  /*font-size: 20px;*/
-  /*text-transform: uppercase;*/
-  margin-bottom: 20px;
-}
-
-.b-answer-indicator__explanation__aub {
-  font-family: "AurebeshInv", Verdana, Tahoma;
-  font-size: 22px;
-}
-
-.b-answer-indicator__explanation__hg {
-  font-family: Verdana, Tahoma;
-}
-
-.p-answer-indicator__right {
-  /* background-color: greenyellow; */
-  color: #00ff00;
-  /*padding: 10px;*/
-  /*text-align: center;*/
-  /*border-style: solid;*/
-  /*border-color: green;*/
-  /*border-width: 1px;*/
-  text-shadow: 2px 2px 8px #00ff00;
-}
-
 .p-answer-indicator__right__active_no1 {
   display: none;
 }
@@ -292,43 +219,12 @@
   display: flex;
 }
 
-.p-answer-indicator__wrong {
-  /* background-color: greenyellow; */
-  color: red;
-  /*padding: 10px;*/
-  /*text-align: center;*/
-  /*border-style: solid;*/
-  /*border-color: red;*/
-  /*border-width: 1px;*/
-  text-shadow: 2px 2px 8px red;
-}
-
 .p-answer-indicator__wrong__active_no1 {
   display: none;
 }
 
 .p-answer-indicator__wrong__active_yes1 {
   display: flex;
-}
-
-.b-statistics__totals {
-  padding: 20px;
-}
-
-.b-statistics__row {
-  margin-top: 10px;
-  color: gray;
-  font-weight: bolder;
-  text-shadow: 2px 2px 8px darkblue;
-}
-
-.b-statistics__row-name {
-  width: 140px;
-  display: inline-block;
-}
-
-.b-statistics__row-value {
-  float: right;
 }
 
 .b-font-sample__aurebesh {

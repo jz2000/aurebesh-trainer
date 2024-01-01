@@ -1,0 +1,103 @@
+.b_statistics {
+    float: left;
+    margin-left: 40px;
+    vertical-align: top;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: #0f0f0f;
+    background-color: #0f0f0f;
+}
+
+.b_statistics__caption {
+    color: gray;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.b_statistics__container {
+    background-image: url(/aurebesh-trainer/img/crt-background.png);
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /*width: 300px;*/
+}
+
+.b_statistics__answer {
+    padding: 20px;
+}
+
+.b_answer_indicator {
+    /*margin-top: 40px;*/
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px gray;
+}
+
+.p_answer_indicator__right {
+    /* background-color: greenyellow; */
+    color: #00ff00;
+    /*padding: 10px;*/
+    /*text-align: center;*/
+    /*border-style: solid;*/
+    /*border-color: green;*/
+    /*border-width: 1px;*/
+    text-shadow: 2px 2px 8px #00ff00;
+}
+
+.p_answer_indicator__wrong {
+    /* background-color: greenyellow; */
+    color: red;
+    /*padding: 10px;*/
+    /*text-align: center;*/
+    /*border-style: solid;*/
+    /*border-color: red;*/
+    /*border-width: 1px;*/
+    text-shadow: 2px 2px 8px red;
+}
+
+.b_answer_indicator__text {
+    /*font-size: 20px;*/
+    /*text-transform: uppercase;*/
+    margin-bottom: 20px;
+}
+
+.b_answer_indicator__explanation {
+    /*font-size: 20px;*/
+    /*text-transform: uppercase;*/
+    margin-bottom: 20px;
+}
+
+.b_answer_indicator__explanation__aub {
+    font-family: "AurebeshInv", Verdana, Tahoma;
+    font-size: 22px;
+}
+
+.b_answer_indicator__explanation__hg {
+    font-family: Verdana, Tahoma;
+}
+
+.b_statistics__totals {
+    padding: 20px;
+}
+
+.b_statistics__row {
+    margin-top: 10px;
+    color: gray;
+    font-weight: bolder;
+    text-shadow: 2px 2px 8px darkblue;
+}
+
+.b_statistics__row_name {
+    width: 140px;
+    display: inline-block;
+}
+
+.b_statistics__row_value {
+    float: right;
+}
