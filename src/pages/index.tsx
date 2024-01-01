@@ -35,24 +35,30 @@ export default function Home() {
 
         <NoSsr>
           <div className={styles.b_game_field}>
-            <AbtActiveTaskPanel
-                currentTaskLetter={abtSession.currentTask.letter}
-                onSubmitAnswer={abtSession.submitCurrentTaskAnswer}
-            />
+            <div>
+              <AbtActiveTaskPanel
+                  currentTaskLetter={abtSession.currentTask.letter}
+                  onSubmitAnswer={abtSession.submitCurrentTaskAnswer}
+              />
+            </div>
 
-            <AbtSessionStatsPanel
-                totalAttempts={abtSession.totalAttempts}
-                totalHits={abtSession.totalHits}
-                totalMisses={abtSession.totalMisses}
-                lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
-                lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
-                lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
-            />
+            <div>
+              <AbtSessionStatsPanel
+                  totalAttempts={abtSession.totalAttempts}
+                  totalHits={abtSession.totalHits}
+                  totalMisses={abtSession.totalMisses}
+                  lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
+                  lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
+                  lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}
+              />
+            </div>
 
-            <AbtLearningProgressPanel
-                programTaskPool={abtSession.programTaskPool}
-                immediateTaskPool={abtSession.immediateTaskPool}
-            />
+            <div>
+              <AbtLearningProgressPanel
+                  programTaskPool={abtSession.programTaskPool}
+                  immediateTaskPool={abtSession.immediateTaskPool}
+              />
+            </div>
 
           </div>
 
