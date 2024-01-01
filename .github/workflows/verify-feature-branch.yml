@@ -1,0 +1,28 @@
+name: Verify feature branch
+
+on:
+  push:
+    branches: ["feature/*"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: "feature_branches"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install NPM Dependencies
+        run: npm ci
+      - name: Build NextJS
+        run: npm run build
+      - name: Lint NextJS
+        run: npm run lint

@@ -29,8 +29,8 @@ const generateProgramTaskPool = (): AbtTask[] => {
     return allLetters.map((letter) => letterToTask(letter));
 }
 
-const filterOutPool = (programTaskPool: AbtTask[], immediateTaskPool: AbtTask[]) => {
-    const result = [];
+const filterOutPool = (programTaskPool: AbtTask[], immediateTaskPool: AbtTask[]): AbtTask[] => {
+    const result: AbtTask[] = [];
     programTaskPool.forEach((task) => {
         if (immediateTaskPool.indexOf(task) < 0) {
             result.push(task);
@@ -51,7 +51,7 @@ const findWorstRatio = (tasks: AbtTask[]): number => {
 }
 
 const collectWorstLearnedTasks = (taskPool: AbtTask[], worstRatio: number): AbtTask[] => {
-    const result = [];
+    const result: AbtTask[] = [];
     taskPool.forEach((task) =>  {
         const ratio = task.hitsAfterLastMiss;
         if (ratio <= worstRatio) {
@@ -80,7 +80,7 @@ const initializeImmediateTaskPool = (programTasks: AbtTask[], recommendedImmedia
 };
 
 const checkPoolRust = (existingImmediateTaskPool: AbtTask[]): AbtTask[] => {
-    const result = [];
+    const result: AbtTask[] = [];
     existingImmediateTaskPool.forEach((task) => {
         if (task.hitsAfterLastMiss < 20) {
             result.push(task);
@@ -89,9 +89,9 @@ const checkPoolRust = (existingImmediateTaskPool: AbtTask[]): AbtTask[] => {
     return result;
 }
 
-const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): number => {
+const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength: number): number => {
     if (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
-        return;
+        return recommendedImmediatePoolLength;
     }
     const allImmediateTasksLearned = existingImmediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
     if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
@@ -100,7 +100,7 @@ const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recom
     return recommendedImmediatePoolLength;
 }
 
-const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength): AbtTask[]  => {
+const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: AbtTask[], recommendedImmediatePoolLength: number): AbtTask[]  => {
     while (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
         const worstLearnedTask = findWorstLearnedTask(programTaskPool, existingImmediateTaskPool);
         if (worstLearnedTask) {
