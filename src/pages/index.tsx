@@ -13,6 +13,14 @@ export default function Home() {
   const [abtUiLanguage, setAbtUiLanguage] = useState<AbtUiLanguage>('high_galactic');
   const abtSession = useAbtSession();
 
+  useEffect(() => {
+    if (abtSession.totalHits % 100 === 0 && abtUiLanguage === 'high_galactic') {
+      setAbtUiLanguage('aurebesh');
+    }
+  }, [
+      abtSession.totalHits
+  ]);
+
   return (
     <>
       <Head>
