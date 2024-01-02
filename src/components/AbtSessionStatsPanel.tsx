@@ -9,6 +9,8 @@ export type AbtSessionStatsPanelProps = {
     totalAttempts: number;
     totalHits: number;
     totalMisses: number;
+    achievedHits: number;
+    necessaryHits: number;
 };
 
 const determineAnswerIndicatorClass = (answerStatus: AbtTaskAnswerStatus): string => {
@@ -52,7 +54,9 @@ export const AbtSessionStatsPanel = (props: AbtSessionStatsPanelProps): React.Re
                             >
                                 {props.lastTaskLetter}
                             </span>
+                            &nbsp;
                             =
+                            &nbsp;
                             <span
                                 className={styles.b_answer_indicator__explanation__hg}
                                 id="js-answer-explanation__hg"
@@ -64,12 +68,14 @@ export const AbtSessionStatsPanel = (props: AbtSessionStatsPanelProps): React.Re
                 </div>
 
                 <div className={styles.b_statistics__totals}>
-                    <span className={styles.b_statistics__row_name}>Attempts </span>
+                    <span className={styles.b_statistics__row_name}>Attempts</span>
                     <span className={styles.b_statistics__row_value} id="js-total-tasks">{props.totalAttempts}</span>
-                    <span className={styles.b_statistics__row_name}>Hits </span>
+                    <span className={styles.b_statistics__row_name}>Hits</span>
                     <span className={styles.b_statistics__row_value} id="js-total-hits">{props.totalHits}</span>
-                    <span className={styles.b_statistics__row_name}>Misses </span>
+                    <span className={styles.b_statistics__row_name}>Misses</span>
                     <span className={styles.b_statistics__row_value} id="js-total-misses">{props.totalMisses}</span>
+                    <span className={styles.b_statistics__row_name}>Accuracy</span>
+                    <span className={styles.b_statistics__row_value} id="js-total-accuracy">{props.achievedHits}/{props.necessaryHits}</span>
                 </div>
             </div>
         </div>

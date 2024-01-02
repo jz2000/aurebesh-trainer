@@ -13,11 +13,13 @@ export type AbtTaskAnswerStatus = 'correct' | 'incorrect' | 'idle';
 export type AbtSession = {
     programTaskPool: AbtTask[];
     immediateTaskPool: AbtTask[];
-    totalAttempts : number,
-    totalHits : number,
-    totalMisses : number,
-    lastHit: Date,
-    lastMiss: Date,
+    totalAttempts: number;
+    totalHits: number;
+    totalMisses: number;
+    achievedHits: number;
+    necessaryHits: number;
+    lastHit: Date;
+    lastMiss: Date;
     currentTask: AbtTask;
     lastTask: AbtTask | null;
     submitCurrentTaskAnswer: (answer: string) => void;
