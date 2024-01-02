@@ -116,6 +116,16 @@ const refillTaskPool = (programTaskPool: AbtTask[], existingImmediateTaskPool: A
     return existingImmediateTaskPool;
 }
 
+const determineAccuracy = (programTaskPool: AbtTask[]): [number, number] => {
+    let achievedHits = 0;
+    let necessaryHits = 0;
+    programTaskPool.forEach((task) => {
+        achievedHits += task.hitsAfterLastMiss;
+        necessaryHits += Math.max(WELL_LEARNT_HITS_THRESHOLD, task.hitsAfterLastMiss);
+    });
+    return [achievedHits, necessaryHits]
+};
+
 export const useAbtSession = (): AbtSession => {
     const programTaskPool = useMemo<AbtTask[]>(() => generateProgramTaskPool(), []);
     const [recommendedImmediatePoolLength, setRecommendedImmediatePoolLength] = useState<number>(4);
@@ -156,6 +166,7 @@ export const useAbtSession = (): AbtSession => {
     };
 
     previousTask.current = currentTask;
+    const [achievedHits, necessaryHits] = determineAccuracy(programTaskPool);
 
     return {
         programTaskPool,
@@ -163,6 +174,8 @@ export const useAbtSession = (): AbtSession => {
         totalAttempts,
         totalHits,
         totalMisses,
+        achievedHits,
+        necessaryHits,
         lastHit,
         lastMiss,
         lastTask,
