@@ -1,20 +1,16 @@
 .b_status {
-    /*float: left;*/
-    /*background-image: url(http://davidocchino.com/portfolio/typography/aurebesh-font-art/images/background_12.jpg);*/
-    float: left;
     vertical-align: top;
-    margin-left: 40px;
-    margin-top: 40px;
     border-style: solid;
     border-width: 1px;
     border-radius: 8px;
     border-color: #0f0f0f;
     background-color: #0f0f0f;
+    padding: 10px;
 }
 
 .b_status__caption {
     color: gray;
-    padding: 10px;
+    padding-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -22,73 +18,64 @@
 .b_status__container {
     background-image: url(/aurebesh-trainer/img/crt-background.png);
     border-radius: 8px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    /*width: 300px;*/
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
 }
 
 .p_status__well_learnt {
     color: #00ff00;
-    padding: 20px;
-    /*margin-left: 40px;*/
-    /*float: left;*/
-    /*float: left;*/
-    display: table-cell;
-    width: 120px;
     text-shadow: 2px 2px 8px #00ff00;
 }
 
 .p_status__well_learnt__caption {
     font-weight: bold;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     color: white;
     text-shadow: 2px 2px 8px gray;
+    text-align: center;
 }
 
 .p_status__in_learning {
     background-image: url(/aurebesh-trainer/img/crt-background.png);
-    /*color: #00cccc;*/
-    padding: 20px;
     color: #5eaecc;
-    /*margin-left: 40px;*/
-    /*float: left;*/
-    /*float: left;*/
-    display: table-cell;
-    width: 120px;
     text-shadow: 2px 2px 8px #5eaecc;
 }
 
 .p_status__in_learning__caption {
     font-weight: bold;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     color: white;
     text-shadow: 2px 2px 8px gray;
+    text-align: center;
 }
 
 .p_status__to_learn {
     background-image: url(/aurebesh-trainer/img/crt-background.png);
-    color: red;
-    padding: 20px;
-    /*margin-left: 40px;*/
-    /*float: left;*/
-    /*float: left;*/
-    display: table-cell;
-    width: 120px;
-    text-shadow: 2px 2px 8px red;
+    color: yellow;
+    text-shadow: 2px 2px 8px yellow;
 }
 
 .p_status__to_learn__caption {
     font-weight: bold;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     color: white;
     text-shadow: 2px 2px 8px gray;
+    text-align: center;
+}
+
+.b_status__letterset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 0.5rem;
+    grid-column-gap: 0.5rem;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .b_status__letter {
     font-family: "AurebeshInv", Verdana, Tahoma;
-    width: 30px;
-    display: inline-block;
     font-size: 22px;
-    float: left;
+    text-align: center;
 }

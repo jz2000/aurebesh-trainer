@@ -42,13 +42,10 @@ export const AbtSessionStatsPanel = (props: AbtSessionStatsPanelProps): React.Re
                     <div
                         className={`${styles.b_answer_indicator} ${determineAnswerIndicatorClass(props.lastTaskAnswerStatus)}`}
                     >
-                        <div
-                            className={styles.b_answer_indicator__text}
-                            id="js-answer-text"
-                        >
+                        <div id="js-answer-text">
                             {determineAnswerIndicatorCopy(props.lastTaskAnswerStatus)}
                         </div>
-                        <div className={styles.b_answer_indicator__explanation} id="js-answer-explanation">
+                        <div id="js-answer-explanation">
                             <span
                                 className={styles.b_answer_indicator__explanation__aub}
                                 id="js-answer-explanation__aub"
@@ -67,18 +64,12 @@ export const AbtSessionStatsPanel = (props: AbtSessionStatsPanelProps): React.Re
                 </div>
 
                 <div className={styles.b_statistics__totals}>
-                    <div className={styles.b_statistics__row}>
-                        <span className={styles.b_statistics__row_name}>Attempts </span>
-                        <span className={styles.b_statistics__row_value} id="js-total-tasks">{props.totalAttempts}</span>
-                    </div>
-                    <div className={styles.b_statistics__row}>
-                        <span className={styles.b_statistics__row_name}>Hits </span>
-                        <span className={styles.b_statistics__row_value} id="js-total-hits">{props.totalHits}</span>
-                    </div>
-                    <div className={styles.b_statistics__row}>
-                        <span className={styles.b_statistics__row_name}>Misses </span>
-                        <span className={styles.b_statistics__row_value} id="js-total-misses">{props.totalMisses}</span>
-                    </div>
+                    <span className={styles.b_statistics__row_name}>Attempts </span>
+                    <span className={styles.b_statistics__row_value} id="js-total-tasks">{props.totalAttempts}</span>
+                    <span className={styles.b_statistics__row_name}>Hits </span>
+                    <span className={styles.b_statistics__row_value} id="js-total-hits">{props.totalHits}</span>
+                    <span className={styles.b_statistics__row_name}>Misses </span>
+                    <span className={styles.b_statistics__row_value} id="js-total-misses">{props.totalMisses}</span>
                 </div>
             </div>
         </div>

@@ -34,21 +34,19 @@ export const AbtActiveTaskPanel = (props: AbtActiveTaskPanelProps): React.ReactE
                     </span>
                 </div>
                 <div className={styles.b_active_task__answer}>
-                    <div>
-                        <form id="answer-form" action="POST" onSubmit={onSubmitAnswerValue}>
-                            <label htmlFor="answer" className={styles.b_active_task__answer__label}>Answer &gt;</label>
-                            <input
-                                type="text"
-                                id="answer"
-                                autoComplete="off"
-                                size={2}
-                                className={styles.b_active_task__answer__input}
-                                value={answerValue}
-                                onInput={onUpdateAnswerValue}
-                            />
-                            <button type="submit" className={styles.b_active_task__answer__button}>OK</button>
-                        </form>
-                    </div>
+                    <form id="answer-form" action="POST" onSubmit={onSubmitAnswerValue} className={styles.b_active_task__answer_form}>
+                        <label htmlFor="answer" className={styles.b_active_task__answer__label}>Answer&gt;</label>
+                        <input
+                            type="text"
+                            id="answer"
+                            autoComplete="off"
+                            size={2}
+                            className={styles.b_active_task__answer__input}
+                            value={answerValue}
+                            onInput={onUpdateAnswerValue}
+                        />
+                        <button type="submit" className={styles.b_active_task__answer__button}>OK</button>
+                    </form>
                 </div>
             </div>
         </div>

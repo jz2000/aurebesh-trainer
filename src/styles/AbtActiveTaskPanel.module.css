@@ -1,18 +1,16 @@
 .b_active_task {
-    float: left;
     vertical-align: top;
-    margin-left: 40px;
-    margin-top: 40px;
     border-style: solid;
     border-width: 1px;
     border-radius: 8px;
     border-color: #0f0f0f;
     background-color: #0f0f0f;
+    padding: 10px;
 }
 
 .b_active_task__caption {
     color: gray;
-    padding: 10px;
+    padding-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -20,20 +18,14 @@
 .b_active_task__container {
     background-image: url(/aurebesh-trainer/img/crt-background.png);
     border-radius: 8px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 310px;
 }
 
 .b_active_task__card {
     color: #5eaecc;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 40px;
     border-radius: 8px;
-    /*height: 230px;*/
-    /*line-height: 200px;*/
 }
 
 .b_active_task__symbol {
@@ -44,13 +36,21 @@
 
 .b_active_task__answer {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b_active_task__answer_form {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
 }
 
 .b_active_task__answer__label {
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 8px gray;
-    margin-right: 10px;
 }
 
 .b_active_task__answer__input {
@@ -64,7 +64,6 @@
     text-transform: uppercase;
     border-width: 1px;
     border-radius: 8px;
-    margin-right: 10px;
 }
 
 .b_active_task__answer__input:focus{
