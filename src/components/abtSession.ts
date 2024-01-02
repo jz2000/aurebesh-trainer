@@ -2,7 +2,9 @@ import { useState, useMemo, useRef } from 'react';
 import { AbtSession, AbtTask } from './abtTypes';
 import { getAllLetters } from './abtLetters';
 
-const maximumPoolLength = 10;
+const MAXIMUM_IMMEDIATE_TASK_POOL_SIZE = 10;
+const MORE_OR_LESS_LEARNT_HITS_THRESHOLD = 10;
+export const WELL_LEARNT_HITS_THRESHOLD = 20;
 
 const selectNextTask = (taskPool: AbtTask[], previousTask: AbtTask | null): AbtTask => {
     while (true) {
@@ -82,7 +84,7 @@ const initializeImmediateTaskPool = (programTasks: AbtTask[], recommendedImmedia
 const checkPoolRust = (existingImmediateTaskPool: AbtTask[]): AbtTask[] => {
     const result: AbtTask[] = [];
     existingImmediateTaskPool.forEach((task) => {
-        if (task.hitsAfterLastMiss < 20) {
+        if (task.hitsAfterLastMiss < WELL_LEARNT_HITS_THRESHOLD) {
             result.push(task);
         }
     });
@@ -93,8 +95,8 @@ const checkImmediatePoolExpansion = (existingImmediateTaskPool: AbtTask[], recom
     if (existingImmediateTaskPool.length < recommendedImmediatePoolLength) {
         return recommendedImmediatePoolLength;
     }
-    const allImmediateTasksLearned = existingImmediateTaskPool.every((task) => (task.hitsAfterLastMiss >= 10));
-    if (allImmediateTasksLearned && recommendedImmediatePoolLength < maximumPoolLength) {
+    const allImmediateTasksLearned = existingImmediateTaskPool.every((task) => (task.hitsAfterLastMiss >= MORE_OR_LESS_LEARNT_HITS_THRESHOLD));
+    if (allImmediateTasksLearned && recommendedImmediatePoolLength < MAXIMUM_IMMEDIATE_TASK_POOL_SIZE) {
         return recommendedImmediatePoolLength + 1;
     }
     return recommendedImmediatePoolLength;

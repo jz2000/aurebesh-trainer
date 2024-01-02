@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/styles/AbtLearningProgressPanel.module.css'
 import { AbtTask } from './abtTypes';
+import { WELL_LEARNT_HITS_THRESHOLD } from './abtSession';
 
 export type AbtLearningProgressPanelProps = {
     programTaskPool: AbtTask[];
@@ -10,7 +11,7 @@ export type AbtLearningProgressPanelProps = {
 const determineTasksToLearn = (programTaskPool: AbtTask[]): AbtTask[] => {
     const result: AbtTask[] = [];
     programTaskPool.forEach((task) => {
-        if (task.hitsAfterLastMiss < 20) {
+        if (task.hitsAfterLastMiss < WELL_LEARNT_HITS_THRESHOLD) {
             result.push(task);
         }
     });
@@ -20,7 +21,7 @@ const determineTasksToLearn = (programTaskPool: AbtTask[]): AbtTask[] => {
 const determineWellLearntTasks = (programTaskPool: AbtTask[]): AbtTask[] => {
     const result: AbtTask[] = [];
     programTaskPool.forEach((task) => {
-        if (task.hitsAfterLastMiss >= 20) {
+        if (task.hitsAfterLastMiss >= WELL_LEARNT_HITS_THRESHOLD) {
             result.push(task);
         }
     });
