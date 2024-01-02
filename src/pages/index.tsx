@@ -47,6 +47,8 @@ export default function Home() {
                   totalAttempts={abtSession.totalAttempts}
                   totalHits={abtSession.totalHits}
                   totalMisses={abtSession.totalMisses}
+                  achievedHits={abtSession.achievedHits}
+                  necessaryHits={abtSession.necessaryHits}
                   lastTaskLetter={abtSession.lastTask?.letter || abtSession.currentTask.letter}
                   lastTaskAnswer={abtSession.lastTask?.lastAnswer || '?'}
                   lastTaskAnswerStatus={abtSession.lastTask?.lastAnswerStatus || 'idle'}

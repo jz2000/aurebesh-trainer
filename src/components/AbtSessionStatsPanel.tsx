@@ -9,6 +9,8 @@ export type AbtSessionStatsPanelProps = {
     totalAttempts: number;
     totalHits: number;
     totalMisses: number;
+    achievedHits: number;
+    necessaryHits: number;
 };
 
 const determineAnswerIndicatorClass = (answerStatus: AbtTaskAnswerStatus): string => {
