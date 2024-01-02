@@ -70,6 +70,8 @@ export const AbtSessionStatsPanel = (props: AbtSessionStatsPanelProps): React.Re
                     <span className={styles.b_statistics__row_value} id="js-total-hits">{props.totalHits}</span>
                     <span className={styles.b_statistics__row_name}>Misses </span>
                     <span className={styles.b_statistics__row_value} id="js-total-misses">{props.totalMisses}</span>
+                    <span className={styles.b_statistics__row_name}>Accuracy</span>
+                    <span className={styles.b_statistics__row_value} id="js-total-accuracy">{props.achievedHits}/{props.necessaryHits}</span>
                 </div>
             </div>
         </div>
