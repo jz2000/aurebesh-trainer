@@ -2,7 +2,6 @@ name: Verify feature branch
 
 on:
   push:
-    branches: ["*"]
 
   workflow_dispatch:
 
